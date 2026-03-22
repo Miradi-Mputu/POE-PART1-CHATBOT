@@ -1,64 +1,55 @@
 ﻿using System;
 
-namespace CybersecurityChatbot
+namespace CyberSecurityChatbot
 {
-    class Conversation
+    public class UserInteraction
     {
-        public static string GetResponse(string input, string userName)
+        public static string AskName()
         {
-            // Convert to lowercase so we can match easily
-            string lowerInput = input.ToLower();
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
 
-            // General questions
-            if (lowerInput.Contains("how are you"))
+            while (string.IsNullOrWhiteSpace(name))
             {
-                return $"I'm doing great, {userName}! Ready to help you stay cyber-safe!";
-            }
-            else if (lowerInput.Contains("purpose") || lowerInput.Contains("what can you do"))
-            {
-                return "My purpose is to educate you about cybersecurity. I can help with topics like passwords, phishing, and safe browsing.";
-            }
-            else if (lowerInput.Contains("what can i ask"))
-            {
-                return "You can ask me about: passwords, phishing, safe browsing, or just say hello!";
+                Console.Write("Name cannot be empty. Please enter your name: ");
+                name = Console.ReadLine();
             }
 
-            // Password topic
-            else if (lowerInput.Contains("password"))
-            {
-                return "Use strong passwords with a mix of letters, numbers, and symbols. " +
-                       "Never reuse passwords across different sites. " +
-                       "Consider using a password manager like Bitwarden or LastPass!";
-            }
+            return name;
+        }
 
-            // Phishing topic
-            else if (lowerInput.Contains("phishing"))
-            {
-                return "Phishing is when attackers pretend to be trustworthy sources to steal your info. " +
-                       "Never click suspicious links in emails. " +
-                       "Always verify the sender's email address before responding.";
-            }
+        public static void WelcomeUser(string name)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine($"\nWelcome {name}!");
+            Console.WriteLine("I am Cyber Bot, your personal online safety guide.");
+            Console.WriteLine("I am here to help you learn how to stay safe online.");
+            Console.ResetColor();
 
-            // Safe browsing topic
-            else if (lowerInput.Contains("browsing") || lowerInput.Contains("safe") || lowerInput.Contains("internet"))
-            {
-                return "For safe browsing: always look for 'https://' in website URLs. " +
-                       "Avoid public Wi-Fi for sensitive tasks. " +
-                       "Keep your browser updated to get the latest security patches.";
-            }
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\n========================================");
+            Console.WriteLine("       HERE IS WHAT YOU CAN ASK ME");
+            Console.WriteLine("========================================");
 
-            // Hello / hi
-            else if (lowerInput.Contains("hello") || lowerInput.Contains("hi"))
-            {
-                return $"Hello, {userName}! How can I help you with cybersecurity today?";
-            }
+            Console.WriteLine("  1.  passwords");
+            Console.WriteLine("  2.  phishing");
+            Console.WriteLine("  3.  safe browsing");
+            Console.WriteLine("  4.  two factor authentication");
+            Console.WriteLine("  5.  malware");
+            Console.WriteLine("  6.  ransomware");
+            Console.WriteLine("  7.  firewall");
+            Console.WriteLine("  8.  virtual private network");
+            Console.WriteLine("  9.  social engineering");
+            Console.WriteLine("  10. data breach");
+            Console.WriteLine("  11. encryption");
+            Console.ResetColor();
 
-            // Default response for unrecognised input
-            else
-            {
-                return "I didn't quite understand that. Could you rephrase? " +
-                       "Try asking about: passwords, phishing, or safe browsing.";
-            }
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("========================================");
+            Console.WriteLine(" Type any topic above to learn more.");
+            Console.WriteLine("  Type 'exit' when you are done.");
+            Console.WriteLine("========================================\n");
+            Console.ResetColor();
         }
     }
 }

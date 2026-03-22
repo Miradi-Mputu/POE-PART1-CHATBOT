@@ -1,14 +1,22 @@
-﻿using System;
+﻿using CyberSecurityChatbot;
+using System;
+using CyberBot;
 
-namespace CybersecurityChatbot
+class Program
 {
-    class Program
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-            Display.ShowLogo();
-            Chatbot bot = new Chatbot();
-            bot.Start();
-        }
+        Console.Clear();
+
+        VoiceGreeting.PlayGreeting();
+
+        AsciiArt.ShowLogo();
+
+        string name = UserInteraction.AskName();
+
+        UserInteraction.WelcomeUser(name);
+
+        ChatBot bot = new ChatBot();
+        bot.StartChat(name);
     }
 }
