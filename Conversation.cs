@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace CyberSecurityChatbot
+namespace POE_PART1_CHATBOT
 {
-    public class UserInteraction
+    public class Conversation
     {
         public static string AskName()
         {

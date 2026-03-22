@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Threading;
 
-namespace CyberBot
+namespace POE_PART1_CHATBOT
 {
     public class ChatBot
     {
         // Prints text one character at a time to create a typewriter effect
-        // delayMs controls how fast each character appears (default is 18 milliseconds)
         private void TypeWrite(string text, int delayMs = 18)
         {
             try

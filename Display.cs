@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading;
 
-namespace CyberSecurityChatbot
+namespace POE_PART1_CHATBOT
 {
-    public class AsciiArt
+    public class Display
     {
         // Prints each character one at a time to create a typewriter effect
         private static void TypeWrite(string text, int delayMs = 18)

@@ -1,24 +1,36 @@
 ﻿using System;
 using System.IO;
 using System.Media;
-//this class is responsible for running the voice audio
-//the audio is found in a folder in this code and has been integrated into
-namespace CyberSecurityChatbot
+
+// This class is responsible for playing the voice greeting audio
+namespace POE_PART1_CHATBOT
 {
-    public class VoiceGreeting
+    public class AudioPlayer
     {
         public static void PlayGreeting()
         {
             try
             {
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AudioPlayer", "greeting.wav");
+                // Look for greeting.wav directly in the output folder
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "greeting.wav");
 
-                SoundPlayer player = new SoundPlayer(path);
-                player.PlaySync();
+                if (File.Exists(path))
+                {
+                    SoundPlayer player = new SoundPlayer(path);
+                    player.PlaySync();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("[Voice greeting file not found - continuing without audio]");
+                    Console.ResetColor();
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                Console.WriteLine("Audio greeting could not be played.");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"[Audio could not be played: {ex.Message}]");
+                Console.ResetColor();
             }
         }
     }

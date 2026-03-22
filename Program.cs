@@ -1,6 +1,5 @@
-﻿using CyberSecurityChatbot;
-using System;
-using CyberBot;
+﻿using System;
+using POE_PART1_CHATBOT;
 
 class Program
 {
@@ -8,13 +7,13 @@ class Program
     {
         Console.Clear();
 
-        VoiceGreeting.PlayGreeting();
+        AudioPlayer.PlayGreeting();
 
-        AsciiArt.ShowLogo();
+        Display.ShowLogo();
 
-        string name = UserInteraction.AskName();
+        string name = Conversation.AskName();
 
-        UserInteraction.WelcomeUser(name);
+        Conversation.WelcomeUser(name);
 
         ChatBot bot = new ChatBot();
         bot.StartChat(name);
