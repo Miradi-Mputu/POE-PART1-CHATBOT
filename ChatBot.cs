@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading;
 
 namespace POE_PART1_CHATBOT
@@ -6,7 +6,7 @@ namespace POE_PART1_CHATBOT
     public class ChatBot
     {
         // Prints text one character at a time to create a typewriter effect
-        private void TypeWrite(string text, int delayMs = 18)
+        public void TypeWrite(string text, int delayMs = 18)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace POE_PART1_CHATBOT
 
         // Shows the navigation options after the chatbot finishes responding to a topic
         // Reminds the user they can go back to the menu, exit, or ask about another topic
-        private void ShowMenuPrompt(string name)
+        public void ShowMenuPrompt(string name)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("\n----------------------------------------");
@@ -68,7 +68,7 @@ namespace POE_PART1_CHATBOT
 
         // Reads the user's input and maps it to a topic keyword
         // The returned keyword is used by the switch statement in StartChat to pick the right response
-        private string GetTopic(string input)
+        public string GetTopic(string input)
         {
             if (input.Contains("menu")) return "menu";
             if (input.Contains("exit")) return "exit";
