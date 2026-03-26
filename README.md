@@ -1,8 +1,6 @@
 # POE-PART1-CHATBOT
 # Cybersecurity Awareness Chatbot
 
-A C# console application that functions as a cybersecurity awareness chatbot, allowing users to engage in a simulated conversation about online safety practices.
-
 ## Description
 
 This chatbot was developed as Part 1 of the PROG6221 Portfolio of Evidence (POE). It provides users with information on key cybersecurity topics through an interactive console interface. The application features a personalised greeting, coloured console output, ASCII art, and input validation to handle unexpected entries gracefully.
