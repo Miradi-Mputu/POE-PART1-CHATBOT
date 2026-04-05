@@ -6,13 +6,10 @@ class Program
     static void Main()
     {
         Console.Clear();
-
         AudioPlayer.PlayGreeting();
-
         Display.ShowLogo();
 
         string name = Conversation.AskName();
-
         Conversation.WelcomeUser(name);
 
         ChatBot bot = new ChatBot();
