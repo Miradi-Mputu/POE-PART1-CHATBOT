@@ -1,0 +1,31 @@
+name: CI Check
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  check-files:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Check project files
+      run: |
+        echo "Checking files..."
+
+        if [ ! -f README.md ]; then
+          echo "README file missing"
+          exit 1
+        fi
+
+        if ! ls *.wav 1> /dev/null 2>&1; then
+          echo "WAV file missing"
+          exit 1
+        fi
+
+        echo "All required files exist!"
