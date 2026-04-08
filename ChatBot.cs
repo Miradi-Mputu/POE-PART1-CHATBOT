@@ -5,7 +5,7 @@ namespace POE_PART1_CHATBOT
     public class ChatBot
     {
         // Prints a yellow topic heading before each response
-        private void PrintHeading(string title)
+        public void PrintHeading(string title)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Display.TypeWrite("\nChatBot:");
@@ -16,11 +16,12 @@ namespace POE_PART1_CHATBOT
         }
 
         // Prints the next step options after every response
-        private void PrintNextStep()
+        public void PrintNextStep()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Display.TypeWrite("\n----------------------------------------");
             Display.TypeWrite("  Type a topic to keep learning.");
+            Display.TypeWrite("\n----------------------------------------");
             Display.TypeWrite("  Type 'menu' to see the topic list.");
             Display.TypeWrite("  Type 'exit' to leave.");
             Display.TypeWrite("----------------------------------------");
@@ -28,7 +29,7 @@ namespace POE_PART1_CHATBOT
         }
 
         // Checks what the user typed and returns a matching keyword for the switch
-        private string GetTopic(string input)
+        public string GetTopic(string input)
         {
             if (input.Contains("menu")) return "menu";
             if (input.Contains("exit")) return "exit";
@@ -37,14 +38,14 @@ namespace POE_PART1_CHATBOT
             if (input.Contains("password")) return "password";
             if (input.Contains("phishing")) return "phishing";
             if (input.Contains("safe browsing")) return "safebrowsing";
-            if (input.Contains("two factor") || input.Contains("2fa") || input.Contains("authentication")) return "2fa";
-            if (input.Contains("malware") || input.Contains("virus") || input.Contains("trojan")) return "malware";
-            if (input.Contains("ransomware") || input.Contains("ransom")) return "ransomware";
+            if (input.Contains("two factor")) return "2fa";
+            if (input.Contains("malware")) return "malware";
+            if (input.Contains("ransomware")) return "ransomware";
             if (input.Contains("firewall")) return "firewall";
-            if (input.Contains("vpn") || input.Contains("virtual private network")) return "vpn";
-            if (input.Contains("social engineering") || input.Contains("manipulation")) return "socialengineering";
-            if (input.Contains("data breach") || input.Contains("data leak")) return "databreach";
-            if (input.Contains("encryption") || input.Contains("encrypted")) return "encryption";
+            if (input.Contains("vpn") ) return "vpn";
+            if (input.Contains("social engineering")) return "socialengineering";
+            if (input.Contains("data breach") ) return "databreach";
+            if (input.Contains("encryption") ) return "encryption";
 
             return "unknown";
         }

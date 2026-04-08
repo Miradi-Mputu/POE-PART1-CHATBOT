@@ -7,7 +7,10 @@ namespace POE_PART1_CHATBOT
     {
         // Prints text one character at a time to create a typewriter effect
         // Every other class calls this method to print anything to the screen
+        // a typewrite method was created to keep the code cleaner throughput the whole 
         public static void TypeWrite(string text, int delayMs = 18)
+        //string text, int delayMs = 18 this line of code defines the type write effect, it will take the strings given in the other classes
+        //and print them one character at a time with a delay of 18 milliseconds
         {
             try
             {
@@ -27,6 +30,7 @@ namespace POE_PART1_CHATBOT
         }
 
         // Prints the ASCII art logo using the typewriter effect
+        //the following method contains the logo display of the chatbot
         public static void ShowLogo()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;

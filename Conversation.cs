@@ -1,5 +1,5 @@
 ﻿using System;
-
+//in this class 
 namespace POE_PART1_CHATBOT
 {
     public class Conversation
@@ -38,6 +38,9 @@ namespace POE_PART1_CHATBOT
         }
 
         // Prints the full list of topics - also called when the user types 'menu'
+        //this method is incharge of showing the topic list to the user, it is called in the welcome user method and also when the user types 'menu'
+        // and at the beginning of the program after the user enters their name
+        //this method is also called in the other classes when a certain body of code is completed and the user requests for it 
         public static void ShowTopicList()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
