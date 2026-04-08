@@ -2,9 +2,7 @@
 # Cybersecurity Awareness Chatbot
 
 ## Description
-
-This chatbot was developed as Part 1 of the PROG6221 Portfolio of Evidence (POE). It provides users with information on key cybersecurity topics through an interactive console interface. The application features a personalised greeting, coloured console output, ASCII art, and input validation to handle unexpected entries gracefully.
-
+This ChatBot is created to gove users awarness on cyber security and its threats. The user will be able to ask questions on certain cyber threats.
 ## Features
 
 - ASCII art logo displayed on launch
