@@ -28,6 +28,10 @@ This ChatBot is created to gove users awarness on cyber security and its threats
    - `what can I ask` - see available topics
 4. Type `exit` to quit the chatbot
 
+## CI Status
+<img width="941" height="431" alt="image" src="https://github.com/user-attachments/assets/c26b2100-996a-48a4-98eb-4175f14ec926" />
+
+## YouTube link
 
 
 ## Example Interaction
