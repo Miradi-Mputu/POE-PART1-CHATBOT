@@ -20,7 +20,7 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore "Poe_Part1_ChatBot.csproj"
 
       - name: Build
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build "Poe_Part1_ChatBot.csproj" --no-restore --configuration Release
